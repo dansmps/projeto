@@ -1,0 +1,205 @@
+* {
+
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    
+    
+    }
+    
+    :root {
+        --text-color: white;
+        --bg-url: url(./acesions/bg-mobile.jpg);
+        --stroke-color: rgba(255,255,255,0.1);
+        --surface-color: rgba(255,255,255,0.1);
+        --surface-color-hover: rgba(255,255,255,05);
+        --highlight-color: rgba(255,255,255,02);
+        --switch-bg-url: url(./acesions/moonstars.svg);
+    }
+    
+    .light {
+        --text-color: black;
+        --bg-url: url(./acesions/bg-mobile-light.jpg); /* Altere para --bg-url */
+        --stroke-color: rgba(0,0,0,0.1);
+        --surface-color: rgba(255,255,255,0.5); /* Corrigido o valor alpha */
+        --surface-color-hover: rgba(128,128,128,0.5); /* Corrigido o valor alpha */
+        --highlight-color: rgba(0,0,0,0.1); /* Corrigido o valor alpha */
+        --switch-bg-url: url(./acesions/sun.svg); /* Corrigido o caminho da imagem */
+    
+        background-image: var(--bg-url); /* Alterado para --bg-url */
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+    
+    
+    
+    body {
+    
+       background: var(--bg-url) no-repeat top center/cover; 
+    
+     
+        
+    }
+    
+    body *{
+        font-family: 'inter' sans-serif;
+        color: var(--text-color)
+    
+    }
+    
+    #container {
+        width: 100%;
+        max-width: 580px;
+        border: 1px solid rgb(253, 252, 252);
+        margin: auto;
+        padding-top: 56px;
+        margin: 56px auto 0px;
+        border: none;
+        padding: 0 24px;
+    
+        
+    
+    #profile {
+        text-align: center;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 24px;
+        padding: 24px;
+    }
+    
+    
+        #profile img {
+            width: 112px;
+            border-radius: 150px;
+        
+            
+    
+        }
+        .light #profile img {
+            border-radius: 70px;
+        }
+    
+    
+    #switch {
+        position: relative;
+        width: 64px;
+        margin: 4px auto;
+    
+    }
+    
+    #switch button {
+        width: 32px;
+        height: 32px;
+        background: white;
+        border: 0;
+        border-radius: 50%;
+        background: white var(--switch-bg-url) no-repeat center;
+    
+    
+    
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    z-index: 1;
+         
+    animation: slide-back 0.2s;
+    }
+
+    #switch button:hoover {
+        outline: 8px solid var(--highlight-color);
+    }
+    
+    .light #switch button {
+        animation: slide-in 0.4s forwards; /* Corrigido o valor da duração da animação */
+    }
+    
+    #switch span {
+        display: block;
+        width: 64px;
+        height: 24px;
+        background: var(--surface-color);
+        border: 1px solid var(--stroke-color);
+        backdrop-filter: blur(4px);
+        -webkit-backdrop-filter: blur(4px);
+        border-radius: 9999px;
+    }
+    
+    
+    ul {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+        padding: 24px 0;
+    }
+    
+    }
+    
+    ul li a {
+        border: var(--stroke-color);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        
+        padding: 16px 24px;
+        background: var(--surface-color);
+        border-radius: 8px;
+    
+        backdrop-filter: blur (4px);
+        -webkit-backdrop-filter: blur(4px);
+    
+    text-decoration: none;
+    font-weight: 500;
+    
+    transition: background 0.2s;
+    
+    }
+    
+    ul li a:hover {
+        background: var(--surface-color-hover);
+        border: 1px solid var(--text-color);
+    }
+    
+    #social-links {
+       display: flex;
+       justify-content: center;
+       gap: 16px;
+       padding: 24px 0;
+    
+       font-size: 24px;
+    
+    }
+    
+    social-links a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+    transition: background 0.2s;
+    }
+    
+    #social-links a:hover {
+        background: var(--highlight-color);
+        border-radius: 50%;
+    }
+    
+    footer {
+        padding: 24px;
+        text-align: center;
+        font-size: 14px;}
+
+        @keyframes slide-in {
+            from {
+                left: 0%;
+            }
+            to {left: 50%}
+            
+        }
+
+        @keyframes slide-back {
+            from {
+                left: 50%;
+            }
+            to {left: 0%;}
+            
+        }
